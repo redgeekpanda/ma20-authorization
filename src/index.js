@@ -10,10 +10,10 @@ const app = new Koa();
 app.use(bodyParser());
 
 const router = new Router();
-router.use('/basic', basicExampleRouter.middleware());
-router.use('/jwt', jwtExampleRouter.middleware());
+router.use('/basic', basicExampleRouter.routes());
+router.use('/jwt', jwtExampleRouter.routes());
 
 app.use(router.allowedMethods());
-app.use(router.middleware());
+app.use(router.routes());
 
 app.listen(8000);
